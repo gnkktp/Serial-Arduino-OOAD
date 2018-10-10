@@ -21,6 +21,7 @@ namespace SerialPort_Arduino
         private void ListSerialPort_Click(object sender, EventArgs e)
         {
             string[] ports = SerialPort.GetPortNames();
+            listBox1.Items.Clear();
             listBox1.Items.AddRange(ports);
         }
     }
