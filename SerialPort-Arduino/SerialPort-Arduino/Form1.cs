@@ -75,5 +75,12 @@ namespace SerialPort_Arduino
         {
             serialPort1.BaudRate = Int32.Parse(comboBox2.Text);
         }
+
+        private void serialPort1_DataReceived(object sender, SerialDataReceivedEventArgs e)
+        {
+            SerialPort sp = (SerialPort)sender;
+            string str = sp.ReadExisting();
+            Console.WriteLine(str);
+        }
     }
 }

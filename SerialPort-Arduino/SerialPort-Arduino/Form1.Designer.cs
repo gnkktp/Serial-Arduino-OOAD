@@ -44,6 +44,10 @@
             this.groupBox1.SuspendLayout();
             this.SuspendLayout();
             // 
+            // serialPort1
+            // 
+            this.serialPort1.DataReceived += new System.IO.Ports.SerialDataReceivedEventHandler(this.serialPort1_DataReceived);
+            // 
             // ListSerialPort
             // 
             this.ListSerialPort.Location = new System.Drawing.Point(62, 26);
