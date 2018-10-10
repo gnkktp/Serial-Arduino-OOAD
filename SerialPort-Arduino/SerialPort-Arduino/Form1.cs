@@ -23,6 +23,13 @@ namespace SerialPort_Arduino
             string[] ports = SerialPort.GetPortNames();
             listBox1.Items.Clear();
             listBox1.Items.AddRange(ports);
+            comboBox1.Items.Clear();
+            comboBox1.Items.AddRange(ports);
+        }
+
+        private void Form1_Load(object sender, EventArgs e)
+        {
+
         }
     }
 }
