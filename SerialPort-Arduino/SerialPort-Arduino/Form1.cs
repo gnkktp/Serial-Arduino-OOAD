@@ -31,5 +31,49 @@ namespace SerialPort_Arduino
         {
 
         }
+
+        private void groupBox1_Enter(object sender, EventArgs e)
+        {
+
+        }
+
+        private void open_Click(object sender, EventArgs e)
+        {
+            if(serialPort1.IsOpen == true)
+            {
+                return;
+            }
+            else
+            {
+                serialPort1.Open();
+                open.Enabled = false;
+                close.Enabled = true;
+            }
+        }
+
+        private void close_Click(object sender, EventArgs e)
+        {
+            if(serialPort1.IsOpen == false)
+            {
+                return;
+            }
+            else
+            {
+                serialPort1.Close();
+                open.Enabled = true;
+                close.Enabled = false;
+            }
+        }
+
+        private void comboBox1_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            serialPort1.PortName = comboBox1.Text;
+            Console.WriteLine(serialPort1.PortName);
+        }
+
+        private void comboBox2_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            serialPort1.BaudRate = Int32.Parse(comboBox2.Text);
+        }
     }
 }
